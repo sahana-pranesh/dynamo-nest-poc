@@ -1,0 +1,17 @@
+version: '3.5'
+
+x-defaults: &defaults
+  logging:
+    options:
+      max-file: "4"
+      max-size: "50m"
+
+services:
+  dyamodb-example:
+  <<: *defaults
+    build:
+      context: ./examples/dynamodb/
+    volumes:
+      - ./examples/dynamodb/src:/src
+    environment:
+      AWS_DEFAULT_REGION: "ap-southeast-2"
