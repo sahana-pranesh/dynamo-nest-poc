@@ -42,8 +42,24 @@ dynamodb.put_item(
 dynamodb.put_item(
   TableName='projects_cache',
   Item={
-    'ID': {'S': 'keyword1' },
-    'data': {'S': json.dumps([100023,100024,10089,10026]) }
+    'ID': {'S': 'keyword2' },
+    'data': {'S': json.dumps([100045,1000904,100897,1004536]) }
+  }
+)
+
+dynamodb.put_item(
+  TableName='projects_cache',
+  Item={
+    'ID': {'S': 'keyword3' },
+    'data': {'S': json.dumps([100345,101904,103897,104536]) }
+  }
+)
+
+dynamodb.put_item(
+  TableName='projects_cache',
+  Item={
+    'ID': {'S': 'keyword4' },
+    'data': {'S': json.dumps([100456,101978,103823,1045390]) }
   }
 )
 

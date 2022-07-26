@@ -1,6 +1,6 @@
 import { DynamoDB } from "aws-sdk";
 
-export const DocumentClient = new DynamoDB.DocumentClient({
+export const documentClient = new DynamoDB.DocumentClient({
     sslEnabled: false,
     endpoint: `http://localhost:4566`,
     accessKeyId: 'mock',

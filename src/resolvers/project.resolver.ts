@@ -2,7 +2,7 @@ import { Resolver, Query, Args, ID } from '@nestjs/graphql';
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { DynamoDB } from "aws-sdk";
 import { GetItemOutput } from 'aws-sdk/clients/dynamodb';
-import { DocumentClient } from 'src/config/dynamodb.config';
+import { documentClient } from 'src/config/dynamodb.config';
 
 
 @ObjectType()
@@ -20,7 +20,7 @@ class ProjectsResolver {
 
   @Query(() => Project)
   async getProjects(@Args('id', { type: () => String }) id: string) {
-    const result = await DocumentClient
+    const result = await documentClient
       .get({
         TableName: "projects_cache",
         Key: {

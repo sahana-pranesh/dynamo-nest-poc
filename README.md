@@ -71,12 +71,3 @@ $ docker-compose -f docker-compose.examples.yml up -d
 ```
 Execute Python scripts inside the Dynamo container.
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
