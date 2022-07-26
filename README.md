@@ -41,8 +41,6 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
 ```
 
 ## Test
@@ -58,9 +56,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Accessing GraphQL endpoints
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+http://localhost:3000/graphql 
+
+## Starting DynamoDB
+
+```bash
+
+$ docker-compose up
+
+$ docker-compose -f docker-compose.examples.yml up -d
+
+```
+Execute Python scripts inside the Dynamo container.
 
 ## Stay in touch
 
