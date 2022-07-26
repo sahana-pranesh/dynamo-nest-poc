@@ -8,7 +8,6 @@ x-defaults: &defaults
 
 services:
   dyamodb-example:
-  <<: *defaults
     build:
       context: ./examples/dynamodb/
     volumes:

@@ -9,7 +9,12 @@ type Chart {
   data: String!
 }
 
+type Project {
+  ID: ID!
+  data: String!
+}
+
 type Query {
-  sayHello: String!
   getChart(id: String!): Chart!
+  getProjects(id: String!): Project!
 }

@@ -1,7 +1,8 @@
 import { Resolver, Query, Args, ID } from '@nestjs/graphql';
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { DynamoDB } from "aws-sdk";
 import { GetItemOutput } from 'aws-sdk/clients/dynamodb';
-import { DocumentClient } from './config';
+import { DocumentClient } from 'src/config/dynamodb.config';
 
 
 @ObjectType()
@@ -15,15 +16,10 @@ class Project {
 
 
 @Resolver()
-class ChartResolver {
-
-  @Query(() => String)
-  sayHello(): string {
-    return 'Hello World!';
-  }
+class ProjectsResolver {
 
   @Query(() => Project)
-  async getChart(@Args('id', { type: () => String }) id: string) {
+  async getProjects(@Args('id', { type: () => String }) id: string) {
     const result = await DocumentClient
       .get({
         TableName: "projects_cache",
@@ -40,4 +36,4 @@ class ChartResolver {
 
 }
 
-export { ChartResolver };
+export { ProjectsResolver };

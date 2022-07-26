@@ -1,7 +1,7 @@
 import { Resolver, Query, Args, ID } from '@nestjs/graphql';
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { GetItemOutput } from 'aws-sdk/clients/dynamodb';
-import { DocumentClient } from './config';
+import { DocumentClient } from 'src/config/dynamodb.config';
 
 
 @ObjectType()
@@ -16,11 +16,6 @@ class Chart {
 
 @Resolver()
 class ChartResolver {
-
-  @Query(() => String)
-  sayHello(): string {
-    return 'Hello World!';
-  }
 
   @Query(() => Chart)
   async getChart(@Args('id', { type: () => String }) id: string) {

@@ -30,3 +30,20 @@ params = {
 }
 table = dynamodb.create_table(**params)
 print(f"Creating {table_name}...")
+
+dynamodb.put_item(
+  TableName='projects_cache',
+  Item={
+    'ID': {'S': 'keyword1' },
+    'data': {'S': json.dumps([100023,100024,10089,10026]) }
+  }
+)
+
+dynamodb.put_item(
+  TableName='projects_cache',
+  Item={
+    'ID': {'S': 'keyword1' },
+    'data': {'S': json.dumps([100023,100024,10089,10026]) }
+  }
+)
+
