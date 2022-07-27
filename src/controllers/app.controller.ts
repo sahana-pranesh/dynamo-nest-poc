@@ -16,4 +16,10 @@ export class AppController {
     console.log('Incoming request' , request);
     return this.appService.insertChart(request);
   }
+
+  @Get('/chart')
+  getChart(@Body() request: ChartRequest) {
+    console.log('Incoming request' , request);
+    return this.appService.getChart(request);
+  }
 }

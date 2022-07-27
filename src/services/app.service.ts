@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { documentClient } from 'src/config/dynamodb.config';
 import { ChartRequest } from 'src/dto/chart.request';
 import { generateHash } from './utils';
@@ -16,16 +17,13 @@ export class AppService {
         ID: generateHash(request),
       }
     };
+    var result;
+    documentClient.get(params)
+      .promise()
+      .then(data => console.log(data.Item))
+      .catch(console.error)
 
-    documentClient.get(params, function (err, data) {
-      if (err)
-        console.log(err);
-      else
-        console.log(data);
-      return data.Item;
-    });
-
-    return null;
+    return;
   }
 
   async insertChart(request: ChartRequest) {

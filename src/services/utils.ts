@@ -9,6 +9,6 @@ export const generateHash = (request: ChartRequest): string => {
     }
     var hashPwd = crypto.createHash('sha1').update(value).digest('hex');
 
-    console.log(hashPwd);
+    console.log("Hashed pwd", hashPwd);
     return hashPwd;
 }
